@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Brawler:wght@400;700&display=swap');
+* {
+   
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Brawler", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    
+    background-color: #f7f9ff;
+    
+    
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #094CFA;
+}
+
+/* Container da imagem */
+.image-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Botões de navegação */
+.tab-buttons {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    display: flex;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(3px); /* Efeito de vidro fosco */
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: max-content;
+    z-index: 10;
+}
+
+.tab-btn {
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.2s, border 0.3s;
+}
+
+.tab-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2)f;
+    color: white;   
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab-btn.active {
+    background-color: rgb(181, 201, 239, 0.2);
+    color: white;
+}
+
+/* Texto sobre a imagem */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+/* Conteúdo da home */
+.text-home-content {
+    margin: 40px auto; /* Centraliza e adiciona espaçamento */
+    padding: 20px;
+    font-size: 15px;
+    line-height: 1.6; /* Espaçamento entre linhas maior */
+    color: #333; /* Cinza escuro para melhor contraste */
+
+
+}
+
+.text-home-content h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #000000; /* Azul para destaque */
+    text-align: start;
+}
+
+.text-home-content p {
+    text-align: justify; /* Justifica o texto (opcional) */
+}
+
+/* Grid de cards */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Seção de conteúdo */
+.content {
+    
+    display: none;
+}
+
+.content-show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Corpo Docente */
+.image-dosc {
+    width: 25vw;
+    height: 25vh;
+    object-fit: cover;
+    display: block;
+}
+
+/*cabeçalho da página*/
+.cabecalho-dos{
+    flex-direction: column;
+    padding: 15px;
+    width: 100vw;
+}
+
+.cabecalho-dos h2{
+    padding: 15px;
+    font-size: 30;
+}
+
+.cabecalho-dos p{
+    padding-inline: 15px;
+}
+/*Card dos professores*/
+.dos-card {
+    margin: 10px;
+    display: flex;
+    gap: 15px; /* Espaço entre imagem e texto */
+    padding: 15px;
+    width: 90%;
+    background-color: rgb(245, 245, 255);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dos-card:hover {
+    transform: scale(1.02);
+}
+
+.dos-card img {
+    width: 80px; /* Tamanho da imagem */
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dos-card .text-content {
+    display: flex;
+    flex-direction: column; /* Organiza o h3 e o p em coluna */
+}
+
+.dos-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px; /* Espaço entre o título e o parágrafo */
+}
+
+.dos-card p {
+    font-size: 14px;
+    color: #666;
+    font-weight: normal;
+    margin: 0; /* Remove margem padrão do <p> */
+}
+
+
+.imagecard {
+    width: 100vw;  /* Ocupa toda a largura da tela */
+    height: 40vh;  /* 1/4 da altura da tela */
+    max-height: 250px; /* Garante um limite máximo */
+    object-fit: cover; /* Ajusta a imagem sem distorcer */
+    display: block;
+}
+
+.imagecard img {
+    width: 100%; /* Garante que a imagem ocupe toda a largura */
+    height: 100%; /* Faz a imagem ocupar toda a altura da div */
+    object-fit: cover; /* Mantém a proporção e corta o excesso */
+}
+
+.linkscontent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;/* Define uma largura máxima */
+    background: transparent;
+
+}
+
+.linkscontent h2{
+    padding: 25px;
+}
+
+.card-links {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    margin-top: 15px;
+
+}
+
+.card-link {
+
+    display: block;
+    text-align: center;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.card-link:hover {
+    background: #f5faff;
+    transform: scale(1.05);
+}
